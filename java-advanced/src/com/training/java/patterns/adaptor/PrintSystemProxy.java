@@ -3,6 +3,7 @@ package com.training.java.patterns.adaptor;
 
 public class PrintSystemProxy extends PrintSystem {
 
+
     @Override
     public void print(final Employee emp) {
         if (emp.getName() == null) {

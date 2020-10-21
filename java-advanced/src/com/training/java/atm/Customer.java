@@ -3,13 +3,21 @@ package com.training.java.atm;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.training.java.annotation.validation.ListSize;
+import com.training.java.annotation.validation.Size;
+
 
 public class Customer {
 
+    @Size(min = 5, max = 15)
     private String              name;
+    @Size(min = 5, max = 15)
     private String              surname;
+    @Size(min = 8, max = 15)
     private String              username;
+    @Size(min = 8, max = 15)
     private String              password;
+    @ListSize(min = 1, max = 10)
     private final List<Account> accountList = new ArrayList<>();
     private boolean             active;
 

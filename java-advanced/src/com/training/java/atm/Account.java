@@ -1,8 +1,9 @@
 package com.training.java.atm;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Account {
 
@@ -43,15 +44,12 @@ public class Account {
 
 
     public static List<Account> parse(final String accountStr) {
-        String[] aaccountStrLoc = accountStr.split(";");
-        List<Account> accountsLoc = new ArrayList<>();
-        for (String accountLoc : aaccountStrLoc) {
-            String[] sa = accountLoc.split("#");
-            accountsLoc.add(new Account(sa[0],
-                                        new BigDecimal(sa[1])));
-
-        }
-        return accountsLoc;
+        return Arrays.stream(accountStr.split(";"))
+                     .map(s -> s.split("#"))
+                     .filter(sa -> sa.length == 2)
+                     .map(sa -> new Account(sa[0],
+                                            new BigDecimal(sa[1])))
+                     .collect(Collectors.toList());
     }
 
     public static void main(final String[] args) {

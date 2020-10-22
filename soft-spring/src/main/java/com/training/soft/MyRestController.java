@@ -1,4 +1,4 @@
-package com.training.ykb;
+package com.training.soft;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

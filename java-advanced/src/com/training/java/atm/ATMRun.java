@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class ATMRun {
 
-    public static void main(final String[] args) {
+    public void run() {
         CustomerManager customerManagerLoc = new CustomerManager();
         customerManagerLoc.init();
 
@@ -30,6 +30,10 @@ public class ATMRun {
         } catch (Exception eLoc) {
             eLoc.printStackTrace();
         }
+    }
 
+    public static void main(final String[] args) {
+        ATMRun atmRunLoc = new ATMRun();
+        atmRunLoc.run();
     }
 }

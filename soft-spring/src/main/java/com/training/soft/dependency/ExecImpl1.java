@@ -1,4 +1,4 @@
-package com.training.ykb.dependency;
+package com.training.soft.dependency;
 
 public class ExecImpl1 implements IExecute {
 

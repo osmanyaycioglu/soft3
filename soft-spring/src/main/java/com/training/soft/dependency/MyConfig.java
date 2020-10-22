@@ -1,4 +1,4 @@
-package com.training.ykb.dependency;
+package com.training.soft.dependency;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

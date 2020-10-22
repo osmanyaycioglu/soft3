@@ -1,4 +1,4 @@
-package com.training.ykb;
+package com.training.soft;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

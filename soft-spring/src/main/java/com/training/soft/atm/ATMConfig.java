@@ -15,6 +15,8 @@ public class ATMConfig {
         switch (this.customerDAOType) {
             case FILE:
                 return new FileReaderCustomerDAO();
+            case DB:
+                return new DBReaderCustomerDAO();
             default:
                 return new FileReaderCustomerDAO();
         }

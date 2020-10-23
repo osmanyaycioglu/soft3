@@ -3,12 +3,24 @@ package com.training.soft.atm;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+@Entity
 public class Customer {
 
+    @Id
+    @GeneratedValue
+    private long                customerId;
     private String              name;
     private String              surname;
     private String              username;
     private String              password;
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "customer")
     private final List<Account> accountList = new ArrayList<>();
     private boolean             active;
 
@@ -105,6 +117,14 @@ public class Customer {
                + ", active="
                + this.active
                + "]";
+    }
+
+    public long getCustomerId() {
+        return this.customerId;
+    }
+
+    public void setCustomerId(final long customerIdParam) {
+        this.customerId = customerIdParam;
     }
 
 

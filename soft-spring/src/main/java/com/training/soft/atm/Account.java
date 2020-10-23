@@ -5,10 +5,28 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.xml.bind.annotation.XmlTransient;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+@Entity
 public class Account {
 
+    @Id
+    @GeneratedValue
+    private long       accountId;
     private String     name;
     private BigDecimal amount;
+    @JsonIgnore
+    @XmlTransient
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Customer   customer;
 
     public Account() {
 
@@ -55,5 +73,21 @@ public class Account {
     public static void main(final String[] args) {
         String[] splitLoc = "TL#100".split("#");
         System.out.println(splitLoc);
+    }
+
+    public long getAccountId() {
+        return this.accountId;
+    }
+
+    public void setAccountId(final long accountIdParam) {
+        this.accountId = accountIdParam;
+    }
+
+    public Customer getCustomer() {
+        return this.customer;
+    }
+
+    public void setCustomer(final Customer customerParam) {
+        this.customer = customerParam;
     }
 }

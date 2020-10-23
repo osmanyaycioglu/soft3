@@ -3,6 +3,12 @@ package com.training.soft;
 import org.springframework.stereotype.Component;
 
 @Component
+
+//@Service
+//@Repository
+//@Controller
+//@Configuration
+
 //@Scope("prototype")
 public class MyBean {
 

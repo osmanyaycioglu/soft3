@@ -2,9 +2,8 @@ package com.training.soft.atm;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
 
-@Component
+// @Component
 public class ATMCommandRunner implements CommandLineRunner {
 
     @Autowired
